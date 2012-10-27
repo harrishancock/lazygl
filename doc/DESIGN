@@ -1,0 +1,34 @@
+A single render pass is a call that results in data being written to a
+framebuffer or a transform feedback buffer. A render pass that writes to a
+transform feedback buffer involves:
+
+vertex array object {
+    [element array buffer]
+    draw indirect buffer | metadata from gl*Draw*
+    vertex buffer objects
+}
+shader program {
+    vertex shader
+    [tessellation control shader]
+    [tessellation eval shader]
+    [geometry shader]
+}
+transform feedback {
+    vertex buffer objects
+}
+
+A render pass that writes to a framebuffer involves:
+
+vertex array object {
+    [element array buffer]
+    draw indirect buffer | metadata from gl*Draw*
+    vertex buffer objects
+}
+shader program {
+    vertex shader
+    [tessellation control shader]
+    [tessellation eval shader]
+    [geometry shader]
+    fragment shader
+}
+framebuffer
