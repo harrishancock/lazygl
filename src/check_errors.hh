@@ -12,9 +12,7 @@
 
 namespace lazygl {
 
-void check_errors (const char* file, int line, const char* symbol) {
-    /* TODO */
-}
+void check_errors (const char* file, int line, const char* symbol);
 
 } // namespace lazygl
 

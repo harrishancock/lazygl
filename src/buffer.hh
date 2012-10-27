@@ -4,17 +4,20 @@
 #include "shared_name.hh"
 #include "check_errors.hh"
 
+#include <cassert>
+
 namespace lazygl {
 
 struct buffer {
 public:
-    buffer () : m_name(gen_name()) { }
+    buffer () : m_name(gen_name()) {
+        assert(m_name.get());
+    }
 
     static GLuint gen_name () {
         GLuint n;
         glGenBuffers(1, &n);
         LAZYGL_CHECK_ERRORS(glGenBuffers);
-        n = 666;
         return n;
     }
 
